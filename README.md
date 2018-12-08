@@ -1,29 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-- 2.3.1
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # Database Design
 
 ## users table
@@ -45,8 +19,8 @@ Things you may want to cover:
 |------|----|------|
 |body|text|null: fales|
 |image|string|null: true|
-|group_id|integer|null: fales, foreign_key: true|
-|body|integer|null: fales, foreign_key: true|
+|group_id|references|null: fales, foreign_key: true|
+|user_id|references|null: fales, foreign_key: true|
 
 
 ### Association
@@ -69,8 +43,8 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|integer|null: fales, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: fales, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 
