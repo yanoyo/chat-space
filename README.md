@@ -35,7 +35,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :groups , through :members
+- has_many :groups, through: :members
 - has_many :messages
 - has_many :members
 
@@ -57,9 +57,13 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|group_name|string|index: true, null: fales, unique: true|
+|name|string|index: true, null: fales, unique: true|
 
 ### Association
+
+- has_many :users, through: :members
+- has_many :messages
+- has_many :members
 
 ## members table
 
