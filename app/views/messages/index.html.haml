@@ -1,1 +1,30 @@
 = render partial: "notification"
+
+.wrapper
+  .chat-side
+    .chat-user
+      %h5.chat-user__name
+        Yoshitaka Yano
+      %ul.chat-user__actions
+        %li.chat-user__actions__list
+          = link_to root_path do
+            %i.fa.fa-pencil-square-o
+        %li.chat-user__actions__list
+          = link_to root_path do
+            %i.fa.fa-cog
+    .chat-group
+      .group
+        %h5.group__name
+          aaaaaaaaa
+        %p.group__info
+          まだメッセージはありません。
+      .group
+        %h5.group__name
+          sampleグループ
+        %p.group__info
+          まだメッセージはありません。
+      .group
+        %h5.group__name
+          仮グループ
+        %p.group__info
+          まだメッセージはありません。
