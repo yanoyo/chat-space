@@ -1,30 +1,84 @@
 = render partial: "notification"
 
 .wrapper
-  .chat-side
-    .chat-user
-      %h5.chat-user__name
-        Yoshitaka Yano
-      %ul.chat-user__actions
-        %li.chat-user__actions__list
+  //左側
+  .side
+    .side__user
+      .side__user-content
+        .side__user-name
+          Yoshitaka Yano
+        .side__user-actions
           = link_to root_path do
             %i.fa.fa-pencil-square-o
-        %li.chat-user__actions__list
           = link_to root_path do
             %i.fa.fa-cog
-    .chat-group
-      .group
-        %h5.group__name
-          aaaaaaaaa
-        %p.group__info
-          まだメッセージはありません。
-      .group
-        %h5.group__name
+
+    .side__group
+      = link_to root_path do
+        .side__group-content
+          %p.side__group-name
+            aaaaaaaaa
+          %p.side__group-message
+            まだメッセージはありません。
+      = link_to root_path do
+        .side__group-content
+          %p.side__group-name
+            sampleグループ
+          %p.side__group-message
+            まだメッセージはありません。
+      = link_to root_path do
+        .side__group-content
+          %p.side__group-name
+            仮グループ
+          %p.side__group-message
+            まだメッセージはありません。
+      = link_to root_path do
+        .side__group-content
+          %p.side__group-name
+            仮2
+          %p.side__group-message
+            まだメッセージはありません。
+
+  //右側
+  .chat-main
+    .chat-main__header
+      .chat-main__header--group
+        %h2.chat-main__header--group-name
           sampleグループ
-        %p.group__info
-          まだメッセージはありません。
-      .group
-        %h5.group__name
-          仮グループ
-        %p.group__info
-          まだメッセージはありません。
+        %p.chat-main__header--group-members
+          Members: Yoshitaka Yano
+      %a.btn{href: '/'}
+        .btn-edit
+          Edit
+
+    .chat-main__content
+      .chat-main__list
+        .chat-main__message
+          .chat-main__message-name
+            Yoshitaka Yano
+          .chat-main__message-time
+            2018/12/16/ 21:55:00
+          .chat-main__message-text
+            なるほど
+        .chat-main__message
+          .chat-main__message-name
+            Yoshitaka Yano
+          .chat-main__message-time
+            2018/12/17/ 22:55:00
+          .chat-main__message-text
+            command Enterで送信したい感ある
+        .chat-main__message
+          .chat-main__message-name
+            Yoshitaka Yano
+          .chat-main__message-time
+            2018/12/20/ 22:25:00
+          .chat-main__message-text
+            お腹すいた
+
+    .chat-main__footer
+      %form.footer__form
+        %input.message{type: "text", placeholder: "type a message"}
+        %label{for: "message-image"}
+          %input.image{type: "file", accept: "image/*", id: "message-image"}
+          %i.fa.fa-picture-o
+        %input.submit{type: "submit", value: "Send"}
