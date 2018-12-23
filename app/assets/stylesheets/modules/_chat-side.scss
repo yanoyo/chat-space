@@ -28,10 +28,11 @@
       &-action-list {
         font-size: 20px;
         display: inline;
-        a {
-          color: $white;
-          text-decoration: none;
-        }
+      }
+
+      &-action-list a {
+        color: $white;
+        text-decoration: none;
       }
 
     }
