@@ -25,10 +25,13 @@
         font-weight: bold;
       }
 
-      &-actions a {
-        text-decoration: none;
+      &-action-list {
         font-size: 20px;
-        color: $white;
+        display: inline;
+        a {
+          color: $white;
+          text-decoration: none;
+        }
       }
 
     }
