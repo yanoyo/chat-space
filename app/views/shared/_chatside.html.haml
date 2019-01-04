@@ -1,0 +1,22 @@
+//左側
+.side
+  .side__user
+    .side__user-content
+      %h3.side__user-name
+        = current_user.name
+      %ul.side__user-action-lists
+        %li.side__user-action-list
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
+        %li.side__user-action-list
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
+
+  .side__group
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .side__group-content
+          .side__group-content__name
+            = group.name
+          .side__group-content__message
+            まだメッセージはありません。
