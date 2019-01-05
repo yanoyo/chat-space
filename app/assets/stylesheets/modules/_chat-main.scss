@@ -27,17 +27,15 @@
         color: $silver-gray;
       }
     }
-    a.btn {
-      height: 40px;
+    .btn-edit {
       margin-top: 28px;
-      text-decoration: none;
 
-      .btn-edit {
-        color: $light-blue;
-        border: solid 2px $light-blue;
-        font-size: 14px;
+      .btn {
+        color: $light_blue;
+        text-decoration: none;
+        border: 2px solid $light_blue;
         padding: 10px 20px;
-
+        line-height: 40px;
       }
     }
   }
