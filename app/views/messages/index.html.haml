@@ -5,12 +5,14 @@
   .chat-main__header
     .chat-main__header--group
       %h2.chat-main__header--group-name
-        sampleグループ
+        = @group.name
       %p.chat-main__header--group-members
-        Members: Yoshitaka Yano
-    %a.btn{href: '/'}
-      .btn-edit
-        Edit
+        Members:
+        - @group.users.each do |user|
+          = user.name
+
+    .btn-edit
+      = link_to 'Edit', edit_group_path(@group), class: 'btn'
 
   .chat-main__content
     .chat-main__list
