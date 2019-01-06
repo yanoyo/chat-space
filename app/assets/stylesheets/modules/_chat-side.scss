@@ -39,6 +39,7 @@
   &__group {
     background-color: $indigo-blue;
     height: calc(100vh - 15%);
+    overflow: scroll;
 
     &-content {
       width: 100%;

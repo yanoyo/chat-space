@@ -1,21 +1,26 @@
-.chat-main__message
-  .chat-main__message-name
-    Yoshitaka Yano
-  .chat-main__message-time
-    2018/12/16/ 21:55:00
-  .chat-main__message-text
-    なるほど
-.chat-main__message
-  .chat-main__message-name
-    Yoshitaka Yano
-  .chat-main__message-time
-    2018/12/17/ 22:55:00
-  .chat-main__message-text
-    command Enterで送信したい感ある
-.chat-main__message
-  .chat-main__message-name
-    Yoshitaka Yano
-  .chat-main__message-time
-    2018/12/20/ 22:25:00
-  .chat-main__message-text
-    お腹すいた
+//右側
+.chat-main
+  .chat-main__header
+    .chat-main__header--group
+      %h2.chat-main__header--group-name
+        = @group.name
+      %p.chat-main__header--group-members
+        Members:
+        - @group.users.each do |user|
+          = user.name
+
+    .btn-edit
+      = link_to 'Edit', edit_group_path(@group), class: 'btn'
+
+  .chat-main__content
+    .chat-main__list
+      = render @messages
+
+  .chat-main__footer
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'chat-main__footer__message', placeholder: 'type a message'
+      .chat-main__footer__mask
+        = f.label :image, class: 'chat-main__footer__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'chat-main__footer__submit'
