@@ -17,7 +17,7 @@
 
 |Column|Type|Option|
 |------|----|------|
-|body|text|null: fales|
+|body|content|null: fales|
 |image|string|null: true|
 |group_id|references|null: fales, foreign_key: true|
 |user_id|references|null: fales, foreign_key: true|
